@@ -1,0 +1,17 @@
+package com.bodhi.library;
+
+// PATTERN: Chain of Responsibility (Concrete Handler)
+public class SelfCheckout extends Approver {
+    @Override
+    public void approveBorrow(LibraryItem item) {
+        // Logic: Approve if value is low (< $50)
+        if (item.getValue() < 50) {
+            System.out.println("SelfCheckout: Approved borrowing of '" + item.getTitle() + "'.");
+        } else if (nextApprover != null) {
+            System.out.println("SelfCheckout: Item too valuable, passing to Librarian...");
+            nextApprover.approveBorrow(item);
+        } else {
+            System.out.println("SelfCheckout: Cannot approve, and no further steps.");
+        }
+    }
+}
