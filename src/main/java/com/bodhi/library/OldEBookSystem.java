@@ -1,6 +1,5 @@
 package com.bodhi.library;
 
-// PATTERN: Adapter (Adaptee - Legacy Code)
 public class OldEBookSystem {
     private String digitalTitle;
 

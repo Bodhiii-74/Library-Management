@@ -1,11 +1,9 @@
 package com.bodhi.library;
 
-// PATTERN: Factory Method (Product)
-// PATTERN: Adapter (Implements Target Interface for compatibility)
 public abstract class LibraryItem implements ItemProcessor {
     protected String title;
     protected String id;
-    protected double value; // For approval logic
+    protected double value;
 
     public LibraryItem(String title, String id, double value) {
         this.title = title;
@@ -21,11 +19,10 @@ public abstract class LibraryItem implements ItemProcessor {
         return value;
     }
 
-    // Abstract method to be implemented by concrete products
     public abstract void displayInfo();
 
     @Override
     public void process() {
-        displayInfo(); // Default processing is to display info
+        displayInfo();
     }
 }

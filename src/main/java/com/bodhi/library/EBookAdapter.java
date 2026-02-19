@@ -1,6 +1,5 @@
 package com.bodhi.library;
 
-// PATTERN: Adapter (Adapter)
 public class EBookAdapter extends LibraryItem {
     private OldEBookSystem ebookSystem;
 
@@ -11,7 +10,6 @@ public class EBookAdapter extends LibraryItem {
 
     @Override
     public void displayInfo() {
-        // Adapting the behavior
         System.out.print("E-Book [Adapter used]: ");
         ebookSystem.openDigitalFile();
     }
